@@ -223,3 +223,8 @@ nav a::after{
 nav a:hover::after{
     width:100%;
 }
+.cart{
+    color:#d4af37;
+    font-size:22px;
+    font-weight:bold;
+}
