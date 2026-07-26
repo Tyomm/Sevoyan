@@ -1,10 +1,17 @@
 let cart = 0;
 
+const cartCount = document.getElementById("cart-count");
+
 const buttons = document.querySelectorAll(".product button");
 
 buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        cart++;
-        alert("✅ Product added to cart!\n🛒 Cart: " + cart);
-    });
+
+button.addEventListener("click", () => {
+
+cart++;
+
+cartCount.textContent = cart;
+
+});
+
 });
