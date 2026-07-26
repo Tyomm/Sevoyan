@@ -59,3 +59,75 @@ function addToCart() {
 document.getElementById("btn1").onclick = addToCart;
 document.getElementById("btn2").onclick = addToCart;
 document.getElementById("btn3").onclick = addToCart;
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const cartCount = document.getElementById("cart-count");
+
+function updateCartCount() {
+    if (cartCount) {
+        cartCount.textContent = cart.length;
+    }
+}
+
+updateCartCount();
+
+// Ավելացնել զամբյուղ
+document.querySelectorAll(".product button").forEach((button) => {
+    button.addEventListener("click", () => {
+
+        const product = button.parentElement;
+
+        const name = product.querySelector("h3").innerText;
+        const price = product.querySelector("p").innerText;
+        const image = product.querySelector("img").src;
+
+        cart.push({
+            name,
+            price,
+            image
+        });
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        updateCartCount();
+
+        alert("Ապրանքը ավելացվեց զամբյուղ։");
+    });
+});
+
+// Cart էջ
+const cartItems = document.getElementById("cart-items");
+const total = document.getElementById("total");
+
+if (cartItems) {
+
+    let sum = 0;
+
+    cart.forEach((item, index) => {
+
+        const div = document.createElement("div");
+        div.className = "product";
+
+        div.innerHTML = `
+            <img src="${item.image}">
+            <h3>${item.name}</h3>
+            <p>${item.price}</p>
+            <button onclick="removeItem(${index})">Հեռացնել</button>
+        `;
+
+        cartItems.appendChild(div);
+
+        sum += Number(item.price.replace("$", ""));
+    });
+
+    total.innerText = "$" + sum;
+}
+
+function removeItem(index) {
+
+    cart.splice(index, 1);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    location.reload();
+}
