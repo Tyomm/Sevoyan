@@ -288,3 +288,29 @@ nav a:hover::after{
     background:#d4af37;
     color:#000;
 }
+.hero-content{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-content h3{
+    font-size: 32px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.hero-content h1{
+    font-size: 70px;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: white;
+    font-family: 'Cinzel', serif;
+}
+
+.hero-content button{
+    padding: 16px 45px;
+    font-size: 20px;
+}
