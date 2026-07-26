@@ -181,3 +181,45 @@ nav a{
 }
 
 }
+/* Animations */
+
+html{
+    scroll-behavior:smooth;
+}
+
+.product{
+    transition:0.4s ease;
+}
+
+.product:hover{
+    transform:translateY(-12px) scale(1.03);
+    box-shadow:0 15px 35px rgba(212,175,55,.35);
+}
+
+.hero button{
+    transition:.3s;
+}
+
+.hero button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px #d4af37;
+}
+
+nav a{
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#d4af37;
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
