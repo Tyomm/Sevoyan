@@ -146,34 +146,53 @@ background:white;
 @media (max-width: 768px) {
 
 header{
-    flex-direction: column;
-    padding: 20px;
+    flex-direction:column;
+    gap:20px;
+    padding:20px;
+}
+
+.logo h1{
+    font-size:48px;
 }
 
 nav{
-    margin-top: 15px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
 }
 
 nav a{
-    display: inline-block;
-    margin: 10px;
+    margin:0;
+    font-size:20px;
 }
 
-.hero{
-    height: 70vh;
+.language{
+    margin:0;
+    justify-content:center;
+}
+
+.cart{
+    justify-content:center;
 }
 
 .hero h2{
-    font-size: 42px;
+    font-size:34px;
 }
 
 .hero p{
-    font-size: 18px;
+    font-size:18px;
+}
+
+.hero button{
+    width:220px;
 }
 
 .products{
-    grid-template-columns: 1fr;
-    padding: 40px 20px;
+    grid-template-columns:1fr;
+}
+
+}
 }
 
 .product img{
