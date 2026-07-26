@@ -11,68 +11,63 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <header>
-   <div class="logo">
+    <div class="logo">
         <h1>SEVOYAN</h1>
     </div>
 
     <nav>
-            <a href="#">Գլխավոր</a>
-    <a href="#">Խանութ</a>
-    <a href="#">Հավաքածուներ</a>
-    <a href="#">Մեր մասին</a>
-    <a href="#">Կապ</a>
-
-<h2 id="title">NEW COLLECTION</h2>
-<p id="subtitle">Wear Your Confidence</p>
-
-<button id="shopBtn">Shop Now</button>
+        <a id="home" href="#">Գլխավոր</a>
+        <a id="shop" href="#">Խանութ</a>
+        <a id="collections" href="#">Հավաքածուներ</a>
+        <a id="about" href="#">Մեր մասին</a>
+        <a id="contact" href="#">Կապ</a>
     </nav>
+
+    <div class="language">
+        <select onchange="changeLanguage(this.value)">
+            <option value="hy">🇦🇲 Հայերեն</option>
+            <option value="en">🇬🇧 English</option>
+        </select>
+    </div>
 
     <div class="cart">
         🛒 <span id="cart-count">0</span>
     </div>
 </header>
-<div class="language">
-     <select id="language-select" onchange="changeLanguage(this.value)">
-        <option value="hy">🇦🇲 Հայերեն</option>
-        <option value="en">🇬🇧 English</option>
-    </select>
-</div>
+
 <section class="hero">
     <div class="hero-content">
-         <p id="subtitle">Հագի՛ր Քո Վստահությունը</p>
-
-<button id="shopBtn">Գնել հիմա</button>
-
-    <button>Գնել հիմա</button>
+        <h2 id="title">ՆՈՐ ՀԱՎԱՔԱԾՈՒ</h2>
+        <p id="subtitle">Հագի՛ր Քո Վստահությունը</p>
+        <button id="shopBtn">Գնել հիմա</button>
     </div>
 </section>
 
 <section class="products">
-<div class="product">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Sneakers">
-<h3>Շքեղ Սպորտային Կոշիկներ</h3>
-<p>$249</p>
-<button>Ավելացնել զամբյուղ</button>
-</div>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="T-Shirt">
-<h3>Պրեմիում Շապիկ</h3>
-<p>$189</p>
-<button>Ավելացնել զամբյուղ</button>
-</div>
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Sneakers">
+        <h3>Շքեղ սպորտային կոշիկներ</h3>
+        <p>$249</p>
+        <button>Ավելացնել զամբյուղ</button>
+    </div>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500" alt="Bag">
-<h3>Շքեղ Պայուսակ</h3>
-<p>$890</p>
-<button>Ավելացնել զամբյուղ</button>
-</div>
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="T-Shirt">
+        <h3>Պրեմիում շապիկ</h3>
+        <p>$189</p>
+        <button>Ավելացնել զամբյուղ</button>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500" alt="Bag">
+        <h3>Շքեղ պայուսակ</h3>
+        <p>$890</p>
+        <button>Ավելացնել զամբյուղ</button>
+    </div>
 
 </section>
 
