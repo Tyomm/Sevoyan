@@ -32,8 +32,10 @@
     </div>
 </header>
 <div class="language">
-    <button onclick="changeLanguage('hy')">🇦🇲 Հայ</button>
-    <button onclick="changeLanguage('en')">🇬🇧 ENG</button>
+     <select id="language-select" onchange="changeLanguage(this.value)">
+        <option value="hy">🇦🇲 Հայերեն</option>
+        <option value="en">🇬🇧 English</option>
+    </select>
 </div>
 <section class="hero">
     <div class="hero-content">
