@@ -49,3 +49,13 @@ function changeLanguage(lang) {
   document.getElementById("btn2").innerText = translations[lang].add;
   document.getElementById("btn3").innerText = translations[lang].add;
 }
+let cart = 0;
+
+function addToCart() {
+    cart++;
+    document.getElementById("cart-count").innerText = cart;
+}
+
+document.getElementById("btn1").onclick = addToCart;
+document.getElementById("btn2").onclick = addToCart;
+document.getElementById("btn3").onclick = addToCart;
