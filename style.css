@@ -40,27 +40,30 @@ nav a:hover{
 }
 
 .hero{
-    height:85vh;
+     height:85vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
+    padding:0 20px;
+
     background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
     url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1600");
     background-size:cover;
     background-position:center;
 }
-}
+
 
 .hero h2{
-    font-size:70px;
-    font-family:'Cinzel',serif;
-    color:white;
+     font-size: clamp(48px, 7vw, 90px);
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
 
 .hero p{
-   font-size:clamp(40px,6vw,70px);
-    line-height:1.1;
+    font-size: clamp(20px, 2vw, 30px);
+    margin-bottom: 30px;
+}
 }
 
 .hero button{
