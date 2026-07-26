@@ -248,3 +248,19 @@ nav a:hover::after{
 .language button:hover{
     background:white;
 }
+.language select{
+    background:#111;
+    color:#d4af37;
+    border:1px solid #d4af37;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+.language select:hover{
+    background:#d4af37;
+    color:#000;
+}
