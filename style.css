@@ -55,16 +55,18 @@ nav a:hover{
 
 
 .hero h2{
-     font-size: clamp(48px, 7vw, 90px);
-    line-height: 1.1;
+      font-size: 70px;
+    font-family: 'Cinzel', serif;
+    color: white;
     margin-bottom: 20px;
 }
 
 .hero p{
-    font-size: clamp(20px, 2vw, 30px);
+    font-size: 60px;
+    line-height: 1.2;
     margin-bottom: 30px;
 }
-}
+
 
 .hero button{
     margin-top:35px;
