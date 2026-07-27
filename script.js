@@ -194,3 +194,20 @@ const user = localStorage.getItem("user");
 if(user && userIcon){
     userIcon.textContent = "👤 " + user;
 }
+function checkout(){
+
+    const fullname = document.getElementById("fullname").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const address = document.getElementById("address").value.trim();
+
+    if(!fullname  !phone  !address){
+        alert("Լրացրեք բոլոր դաշտերը");
+        return;
+    }
+
+    alert("🎉 Պատվերը հաջողությամբ ընդունվեց։ Շնորհակալություն գնումների համար։");
+
+    localStorage.removeItem("cart");
+
+    window.location.href = "index.html";
+}
