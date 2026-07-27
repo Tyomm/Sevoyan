@@ -51,16 +51,39 @@ function changeLanguage(lang){
   document.getElementById("btn3").textContent = translations[lang].add;
 }
 
-// Cart Count
-let count = 0;
+// ===== CART =====
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const cartCount = document.getElementById("cart-count");
 
-function updateCart(){
-    count++;
-    cartCount.textContent = count;
+function updateCartCount() {
+    if (cartCount) {
+        cartCount.textContent = cart.length;
+    }
 }
 
-document.getElementById("btn1").addEventListener("click", updateCart);
-document.getElementById("btn2").addEventListener("click", updateCart);
-document.getElementById("btn3").addEventListener("click", updateCart);
+updateCartCount();
+
+document.querySelectorAll(".product button").forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const product = button.closest(".product");
+
+        const item = {
+            name: product.querySelector("h3").innerText,
+            price: product.querySelector("p").innerText,
+            image: product.querySelector("img").src
+        };
+
+        cart.push(item);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        updateCartCount();
+
+        alert("✅ Ապրանքը ավելացվեց զամբյուղ");
+    });
+
+});
