@@ -3,34 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEVOYAN | Login</title>
+<title>Login | SEVOYAN</title>
 
 <link rel="stylesheet" href="style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<header>
+    <div class="logo">
+        <h1>SEVOYAN</h1>
+    </div>
+
+    <nav>
+        <a href="index.html">Գլխավոր</a>
+        <a href="#">Խանութ</a>
+        <a href="#">Հավաքածուներ</a>
+        <a href="#">Մեր մասին</a>
+        <a href="#">Կապ</a>
+    </nav>
+</header>
+
 <section class="login-page">
 
 <div class="login-box">
 
-<h1>SEVOYAN</h1>
-
 <h2>Մուտք</h2>
 
-<input type="email" placeholder="Email">
+<input type="text" id="username" placeholder="Անուն">
 
-<input type="password" placeholder="Password">
+<input type="password" id="password" placeholder="Գաղտնաբառ">
 
-<button>Մուտք գործել</button>
-
-<p>Չունե՞ք հաշիվ <a href="#">Գրանցվել</a></p>
+<button onclick="login()">Մուտք գործել</button>
 
 </div>
 
 </section>
+
+<script src="script.js"></script>
 
 </body>
 </html>
