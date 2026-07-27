@@ -87,3 +87,40 @@ document.querySelectorAll(".product button").forEach((button) => {
     });
 
 });
+// ===== CART PAGE =====
+
+const cartItems = document.getElementById("cart-items");
+const total = document.getElementById("total");
+
+if (cartItems) {
+
+    cartItems.innerHTML = "";
+
+    let totalPrice = 0;
+
+    cart.forEach((item, index) => {
+
+        totalPrice += Number(item.price.replace("$",""));
+
+        cartItems.innerHTML += `
+        <div class="product">
+            <img src="${item.image}" alt="${item.name}">
+            <h3>${item.name}</h3>
+            <p>${item.price}</p>
+            <button onclick="removeItem(${index})">Հեռացնել</button>
+        </div>
+        `;
+    });
+
+    total.textContent = "$" + totalPrice;
+}
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    localStorage.setItem("cart",JSON.stringify(cart));
+
+    location.reload();
+
+}
