@@ -143,3 +143,22 @@ function toggleFavorite(element){
     }
 
 }
+function searchProducts(){
+
+    const input = document.getElementById("searchInput").value.toLowerCase();
+
+    const products = document.querySelectorAll(".product");
+
+    products.forEach(product=>{
+
+        const title = product.querySelector("h3").innerText.toLowerCase();
+
+        if(title.includes(input)){
+            product.style.display="block";
+        }else{
+            product.style.display="none";
+        }
+
+    });
+
+}
