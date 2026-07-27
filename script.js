@@ -49,6 +49,7 @@ function changeLanguage(lang){
   document.getElementById("btn1").textContent = translations[lang].add;
   document.getElementById("btn2").textContent = translations[lang].add;
   document.getElementById("btn3").textContent = translations[lang].add;
+  document.getElementById("shop").href = "#shop-section";
 }
 
 // ===== CART =====
