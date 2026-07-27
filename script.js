@@ -162,21 +162,9 @@ function searchProducts(){
     });
 
 }
-// LOGIN
+const user = localStorage.getItem("user");
+const userIcon = document.getElementById("userIcon");
 
-function login(){
-
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    if(username === "" || password === ""){
-        alert("Լրացրեք բոլոր դաշտերը");
-        return;
-    }
-
-    localStorage.setItem("user", username);
-
-    alert("Բարի գալուստ, " + username + "!");
-
-    window.location.href = "index.html";
+if(user && userIcon){
+    userIcon.innerHTML = "👤 " + user;
 }
