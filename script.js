@@ -124,3 +124,10 @@ function removeItem(index){
     location.reload();
 
 }
+function clearCart(){
+
+    localStorage.removeItem("cart");
+
+    location.reload();
+
+}
