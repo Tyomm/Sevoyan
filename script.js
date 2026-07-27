@@ -132,3 +132,14 @@ function clearCart(){
     location.reload();
 
 }
+function toggleFavorite(element){
+
+    element.classList.toggle("active");
+
+    if(element.classList.contains("active")){
+        element.innerHTML = "♥️";
+    }else{
+        element.innerHTML = "♡";
+    }
+
+}
