@@ -363,3 +363,20 @@ nav{
     color:#d4af37;
     text-decoration:none;
 }
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.user{
+    color:#d4af37;
+    font-size:24px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.user:hover{
+    color:white;
+    transform:scale(1.1);
+}
