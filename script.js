@@ -32,23 +32,25 @@ const translations = {
 
 function changeLanguage(lang){
 
-  document.getElementById("home").textContent = translations[lang].home;
-  document.getElementById("shop").textContent = translations[lang].shop;
-  document.getElementById("collections").textContent = translations[lang].collections;
-  document.getElementById("about").textContent = translations[lang].about;
-  document.getElementById("contact").textContent = translations[lang].contact;
+  const t = translations[lang];
 
-  document.getElementById("title").textContent = translations[lang].title;
-  document.getElementById("subtitle").textContent = translations[lang].subtitle;
-  document.getElementById("shopBtn").textContent = translations[lang].button;
+  if(document.getElementById("home")) document.getElementById("home").textContent = t.home;
+  if(document.getElementById("shop")) document.getElementById("shop").textContent = t.shop;
+  if(document.getElementById("collections")) document.getElementById("collections").textContent = t.collections;
+  if(document.getElementById("about")) document.getElementById("about").textContent = t.about;
+  if(document.getElementById("contact")) document.getElementById("contact").textContent = t.contact;
 
-  document.getElementById("product1").textContent = translations[lang].product1;
-  document.getElementById("product2").textContent = translations[lang].product2;
-  document.getElementById("product3").textContent = translations[lang].product3;
+  if(document.getElementById("title")) document.getElementById("title").textContent = t.title;
+  if(document.getElementById("subtitle")) document.getElementById("subtitle").textContent = t.subtitle;
+  if(document.getElementById("shopBtn")) document.getElementById("shopBtn").textContent = t.button;
 
-  document.getElementById("btn1").textContent = translations[lang].add;
-  document.getElementById("btn2").textContent = translations[lang].add;
-  document.getElementById("btn3").textContent = translations[lang].add;
+  if(document.getElementById("product1")) document.getElementById("product1").textContent = t.product1;
+  if(document.getElementById("product2")) document.getElementById("product2").textContent = t.product2;
+  if(document.getElementById("product3")) document.getElementById("product3").textContent = t.product3;
+
+  if(document.getElementById("btn1")) document.getElementById("btn1").textContent = t.add;
+  if(document.getElementById("btn2")) document.getElementById("btn2").textContent = t.add;
+  if(document.getElementById("btn3")) document.getElementById("btn3").textContent = t.add;
 }
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -62,7 +64,6 @@ function updateCartCount(){
 }
 
 updateCartCount();
-
 document.querySelectorAll(".product button").forEach(button => {
 
     button.addEventListener("click", () => {
@@ -86,17 +87,19 @@ document.querySelectorAll(".product button").forEach(button => {
     });
 
 });
+
 // ===== CART PAGE =====
 
 const cartItems = document.getElementById("cart-items");
 const total = document.getElementById("total");
 
-if (cartItems) {
+if(cartItems){
 
     cartItems.innerHTML = "";
+
     let totalPrice = 0;
 
-    cart.forEach((item, index) => {
+    cart.forEach((item,index)=>{
 
         totalPrice += Number(item.price.replace("$",""));
 
@@ -111,26 +114,33 @@ if (cartItems) {
 
     });
 
-    if (total) {
+    if(total){
         total.textContent = "$" + totalPrice;
     }
+
 }
 
 function removeItem(index){
+
     cart.splice(index,1);
-    localStorage.setItem("cart", JSON.stringify(cart));
+
+    localStorage.setItem("cart",JSON.stringify(cart));
+
     location.reload();
+
 }
 
 function clearCart(){
-    localStorage.removeItem("cart");
-    location.reload();
-}
 
+    localStorage.removeItem("cart");
+
+    location.reload();
+
+}
 // ===== FAVORITES =====
 
 function toggleFavorite(element){
-    console.log("Favorite աշխատեց");
+
     element.classList.toggle("active");
 
     if(element.classList.contains("active")){
@@ -138,6 +148,7 @@ function toggleFavorite(element){
     }else{
         element.textContent = "♡";
     }
+
 }
 
 // ===== SEARCH =====
@@ -173,7 +184,7 @@ function login(){
 
     if(!username || !password) return;
 
-    if(username.value.trim()==="" || password.value.trim()===""){
+    if(username.value.trim() === "" || password.value.trim() === ""){
         alert("Լրացրեք բոլոր դաշտերը");
         return;
     }
@@ -187,19 +198,28 @@ function login(){
 
 // ===== USER =====
 
-const userIcon = document.getElementById("userIcon");
 const user = localStorage.getItem("user");
+const userIcon = document.getElementById("userIcon");
 
 if(user && userIcon){
     userIcon.textContent = "👤 " + user;
 }
+
+// ===== CHECKOUT =====
+
 function checkout(){
 
-    const fullname = document.getElementById("fullname").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const address = document.getElementById("address").value.trim();
+    const fullname = document.getElementById("fullname");
+    const phone = document.getElementById("phone");
+    const address = document.getElementById("address");
 
-    if(!fullname  !phone  !address){
+    if(!fullname  !phone  !address) return;
+
+    if(
+        fullname.value.trim() === "" ||
+        phone.value.trim() === "" ||
+        address.value.trim() === ""
+    ){
         alert("Լրացրեք բոլոր դաշտերը");
         return;
     }
