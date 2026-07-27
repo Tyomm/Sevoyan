@@ -301,3 +301,65 @@ nav{
 .search-box input:focus{
     border-color:white;
 }
+.login-page{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#0d0d0d;
+}
+
+.login-box{
+    width:380px;
+    background:#111;
+    border:1px solid #2d2d2d;
+    border-radius:15px;
+    padding:40px;
+    text-align:center;
+}
+
+.login-box h1{
+    font-family:'Cinzel',serif;
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.login-box h2{
+    margin-bottom:30px;
+}
+
+.login-box input{
+    width:100%;
+    padding:15px;
+    margin-bottom:20px;
+    background:#1b1b1b;
+    border:1px solid #333;
+    color:white;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.login-box button{
+    width:100%;
+    padding:15px;
+    background:#d4af37;
+    color:#000;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.login-box button:hover{
+    background:white;
+}
+
+.login-box p{
+    margin-top:20px;
+}
+
+.login-box a{
+    color:#d4af37;
+    text-decoration:none;
+}
