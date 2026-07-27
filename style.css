@@ -438,3 +438,20 @@ nav{
     background:white;
     transform:scale(1.03);
 }
+.favorite{
+    font-size:28px;
+    cursor:pointer;
+    display:block;
+    margin:15px 0;
+    color:#888;
+    transition:.3s;
+}
+
+.favorite:hover{
+    color:red;
+    transform:scale(1.2);
+}
+
+.favorite.active{
+    color:red;
+}
