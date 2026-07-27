@@ -245,3 +245,33 @@ nav{
 .clear-cart:hover{
     background:white;
 }
+.product{
+    position:relative;
+}
+
+.favorite{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:white;
+    color:#d4af37;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-size:24px;
+    transition:.3s;
+    user-select:none;
+}
+
+.favorite:hover{
+    transform:scale(1.1);
+}
+
+.favorite.active{
+    background:#d4af37;
+    color:white;
+}
