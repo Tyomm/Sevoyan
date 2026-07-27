@@ -49,24 +49,21 @@ function changeLanguage(lang){
   document.getElementById("btn1").textContent = translations[lang].add;
   document.getElementById("btn2").textContent = translations[lang].add;
   document.getElementById("btn3").textContent = translations[lang].add;
-  document.getElementById("shop").href = "#shop-section";
 }
-
-// ===== CART =====
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const cartCount = document.getElementById("cart-count");
 
-function updateCartCount() {
-    if (cartCount) {
+function updateCartCount(){
+    if(cartCount){
         cartCount.textContent = cart.length;
     }
 }
 
 updateCartCount();
 
-document.querySelectorAll(".product button").forEach((button) => {
+document.querySelectorAll(".product button").forEach(button => {
 
     button.addEventListener("click", () => {
 
@@ -85,6 +82,7 @@ document.querySelectorAll(".product button").forEach((button) => {
         updateCartCount();
 
         alert("✅ Ապրանքը ավելացվեց զամբյուղ");
+
     });
 
 });
@@ -96,7 +94,6 @@ const total = document.getElementById("total");
 if (cartItems) {
 
     cartItems.innerHTML = "";
-
     let totalPrice = 0;
 
     cart.forEach((item, index) => {
@@ -111,27 +108,27 @@ if (cartItems) {
             <button onclick="removeItem(${index})">Հեռացնել</button>
         </div>
         `;
+
     });
 
-    total.textContent = "$" + totalPrice;
+    if (total) {
+        total.textContent = "$" + totalPrice;
+    }
 }
 
 function removeItem(index){
-
     cart.splice(index,1);
-
-    localStorage.setItem("cart",JSON.stringify(cart));
-
+    localStorage.setItem("cart", JSON.stringify(cart));
     location.reload();
-
 }
+
 function clearCart(){
-
     localStorage.removeItem("cart");
-
     location.reload();
-
 }
+
+// ===== FAVORITES =====
+
 function toggleFavorite(element){
 
     element.classList.toggle("active");
@@ -143,28 +140,57 @@ function toggleFavorite(element){
     }
 
 }
+
+// ===== SEARCH =====
+
 function searchProducts(){
 
-    const input = document.getElementById("searchInput").value.toLowerCase();
+    const input = document.getElementById("searchInput");
 
-    const products = document.querySelectorAll(".product");
+    if(!input) return;
 
-    products.forEach(product=>{
+    const value = input.value.toLowerCase();
+
+    document.querySelectorAll(".product").forEach(product => {
 
         const title = product.querySelector("h3").innerText.toLowerCase();
 
-        if(title.includes(input)){
-            product.style.display="block";
+        if(title.includes(value)){
+            product.style.display = "";
         }else{
-            product.style.display="none";
+            product.style.display = "none";
         }
 
     });
 
 }
-const user = localStorage.getItem("user");
+
+// ===== LOGIN =====
+
+function login(){
+
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+
+    if(!username || !password) return;
+
+    if(username.value.trim()==="" || password.value.trim()===""){
+        alert("Լրացրեք բոլոր դաշտերը");
+        return;
+    }
+
+    localStorage.setItem("user", username.value);
+
+    alert("Բարի գալուստ, " + username.value + "!");
+
+    window.location.href = "index.html";
+}
+
+// ===== USER =====
+
 const userIcon = document.getElementById("userIcon");
+const user = localStorage.getItem("user");
 
 if(user && userIcon){
-    userIcon.innerHTML = "👤 " + user;
+    userIcon.textContent = "👤 " + user;
 }
