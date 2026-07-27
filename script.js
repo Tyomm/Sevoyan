@@ -130,7 +130,7 @@ function clearCart(){
 // ===== FAVORITES =====
 
 function toggleFavorite(element){
-
+    console.log("Favorite աշխատեց");
     element.classList.toggle("active");
 
     if(element.classList.contains("active")){
@@ -138,7 +138,6 @@ function toggleFavorite(element){
     }else{
         element.textContent = "♡";
     }
-
 }
 
 // ===== SEARCH =====
