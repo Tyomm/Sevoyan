@@ -275,3 +275,29 @@ nav{
     background:#d4af37;
     color:white;
 }
+.search-box{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin:40px 0;
+}
+
+.search-box input{
+    width:400px;
+    max-width:90%;
+    padding:15px 20px;
+    border:2px solid #d4af37;
+    border-radius:12px;
+    background:#111;
+    color:white;
+    font-size:18px;
+    outline:none;
+}
+
+.search-box input::placeholder{
+    color:#888;
+}
+
+.search-box input:focus{
+    border-color:white;
+}
