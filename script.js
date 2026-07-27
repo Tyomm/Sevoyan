@@ -134,9 +134,9 @@ function toggleFavorite(element){
     element.classList.toggle("active");
 
     if(element.classList.contains("active")){
-        element.innerHTML = "♥️";
+        element.textContent = "♥️";
     }else{
-        element.innerHTML = "♡";
+        element.textContent = "♡";
     }
 
 }
