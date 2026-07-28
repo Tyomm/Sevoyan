@@ -213,7 +213,7 @@ function checkout(){
     const phone = document.getElementById("phone");
     const address = document.getElementById("address");
 
-    if(!fullname  !phone  !address) return;
+   if(!fullname  !phone  !address) return;
 
     if(
         fullname.value.trim() === "" ||
